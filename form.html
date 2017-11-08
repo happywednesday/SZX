@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>问卷调查</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="">
+<!-- css -->
+<link rel="stylesheet" href="node_modules\jquery-weui\dist\lib\weui.min.css">
+<link rel="stylesheet" href="node_modules\jquery-weui\dist\css\jquery-weui.min.css">
+<link rel="stylesheet" href="css\main.css">
+<!-- script -->
+<script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
+<script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
+<script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
+<script src="js\main.js"></script>
+
+</head>
+  <body ontouchstart>
+   <div class ="container" id ="container">
+     <!-- layout design -->
+      <div class="page">
+           <div class="page__hd">
+             <h1 class = "page__title">问卷</h1>
+             <p class ="page__desc">请告诉我您的购房需求，我会从海量数据中找到符合您要求的好房子 </p>
+           </div>
+           <div class="page__bd page__bd_spacing">
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">1. 您的预算？</label></div>
+                 <div class="weui-cell__bd">
+                 <input class="weui-input" id="budget" type="text" value="" readonly="">
+                </div>
+             </div>
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">2. 想找多大面积的房子？</label></div>
+                 <div class="weui-cell__bd">
+                 <input class="weui-input" id="size" type="text" value="" readonly="">
+                </div>
+             </div>
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">3. 有意向区域吗？</label></div>
+                 <div class="weui-cell__bd">
+                 <input class="weui-input" id="district" type="text" value="" readonly="">
+                </div>
+             </div>
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">4. 对周边配套有什么要求？</label></div>
+                 <div class="weui-cell__bd">
+                 <input class="weui-input" id="neighbor" type="text" value="" readonly="">
+                </div>
+             </div>
+             <div class="weui-cell">
+                <div class="weui-cell__hd"><label for="name" class="weui-label">5. 想找什么样的房子？</label></div>
+                 <div class="weui-cell__bd">
+                 <input class="weui-input" id="feature" type="text" value="" readonly="">
+                </div>
+             </div>
+
+
+
+           </div>
+           <div class="page__ft">
+             <a href="javascript:home()">Home</a>
+           </div>
+      </div>
+   </div>
+
+
+
+<script>
+ $(function(){
+    FastClick.attach(document.body);
+  });
+</script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "szx",
+  "version": "1.0.0",
+  "description": "draft",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "draft"
+  ],
+  "author": "Jason",
+  "license": "ISC",
+  "dependencies": {
+    "jquery-weui": "^1.0.1",
+    "rateyo": "^2.3.3"
+  }
+}
