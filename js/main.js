@@ -85,7 +85,7 @@ $("#size").select({
           empty: false,
           onOK: function(input){
             d.titles=input;
-            console.log(this,d.titles);
+
           }
         });
 
@@ -96,7 +96,8 @@ $("#size").select({
   },
 
 });
-$("#district").select({
+
+var districtConfig = {
   title: "区域",
   multi: true,
   items: [
@@ -140,7 +141,18 @@ $("#district").select({
       value: 7,
       description: ""
     } ],
-});
+
+    onChange: function(d) {
+      var found = d.values.includes("0");
+      if (found) {
+        $("#district").select("update",
+          {multi:false});
+          
+      }
+}
+};
+$("#district").select(districtConfig);
+
 $("#neighbor").select({
   title: "配套",
   multi: true,

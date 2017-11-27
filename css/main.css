@@ -6,7 +6,7 @@
 
 }
 .page__bd{
-  background-color: #F8C0D0;
+  /*background-color: #F8C0D0;*/
   font-family: Microsoft Yahei;
 
 }
@@ -17,6 +17,8 @@
 .weui-label{
   width:200px;
 }
+
+
 
 body,html,#resultmap{
 width: 100%;
