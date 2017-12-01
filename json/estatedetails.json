@@ -1,0 +1,17 @@
+{"status":"",
+ "msg":"",
+ "data":
+  {
+    "name":"深圳湾五号",
+    "description":"如果你无法简洁的表达你的想法，那只是说明你还不够了解它",
+    "overall":8.1,
+    "planning":8.3,
+    "metro":8.8,
+    "commercial":7.6,
+    "living":7.7,
+    "primary":6.3,
+    "secondary":6.4,
+    "landscape":7.9,
+    "medical":9.1
+  }
+}

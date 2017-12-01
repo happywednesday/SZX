@@ -1,0 +1,28 @@
+ { "status":"",
+     "msg":"",
+     "data":
+       {
+  
+        "name": "深圳市实验中学(初中部)",
+        "rate": 5,
+        "desc":"深圳最好中学",
+        "passrate":0.8,
+        "estate":[
+          {
+            "name":"国际中旅花园",
+            "desc":"secondary text",
+            "price":11
+            },
+            {
+              "name":"香榭丽花园",
+              "desc":"secondary text",
+              "price":10
+            },
+            {
+              "name":"东海花园",
+              "desc":"secondary text",
+              "price":9.5
+            }]
+
+ }
+ }

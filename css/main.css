@@ -3,6 +3,7 @@
   font-family: Microsoft Yahei;
   color: #FFFFFF;
   text-align: center;
+  opacity: 0.8;
 
 }
 .page__bd{
@@ -14,11 +15,23 @@
   text-align: center;
 }
 
+.weui-panel__hd{
+  text-align: center;
+  color:#000000;
+  font-size: 20px;
+}
 .weui-label{
   width:200px;
 }
 
-
+.chart div {
+  font: 10px sans-serif;
+  background-color: #FA5858;
+  text-align: center;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+}
 
 body,html,#resultmap{
 width: 100%;
@@ -26,4 +39,72 @@ height: 100%;
 overflow: hidden;
 margin:0;
 font-family:Microsoft Yahei;
+
+}
+
+.box{
+  margin: 10px auto;
+  width: 300px;
+  height: 40px;
+
+}
+
+.container1{
+  width: 300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.container1 input#search{
+  width: 300px;
+  height: 40px;
+  background-color: #910029;
+  border: none;
+  font-size: 12pt;
+  float: left;
+  color: white;
+  padding-left: 45px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transition: background-color .55s ease;
+  -moz-transition: background-color .55s ease;
+  -ms-transition: background-color .55s ease;
+  -o-transition: background-color .55s ease;
+  transition: background-color .55s ease;
+}
+
+
+.container1 input#search:hover, .container1 input#search:focus, .container1 input#search:active{
+    outline:none;
+    background-color: #910029;
+    opacity: 0.2;
+  }
+.weui-btn-mini {
+  position: absolute;
+  margin-left: 240px;
+  margin-top: 4px;
+  font-size: 13px;
+  z-index: 1;
+  color: #ffffff;
+  background-color: #910029;
+
+}
+
+.weui-flex__item{
+  padding:10px 10px 10px 10px;
+}
+
+.weui-cell span.fa-star{
+  color:#f7c100;
+  padding-left: 5px;
+  padding-right: 5px;
+
+}
+#rate span.fa-star{
+  color:#f7c100;
+  padding-left: 5px;
+  padding-right: 5px;
 }

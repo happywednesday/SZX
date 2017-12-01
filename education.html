@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>问卷调查</title>
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="description" content="">
+<!-- css -->
+<link rel="stylesheet" href="node_modules\jquery-weui\dist\lib\weui.min.css">
+<link rel="stylesheet" href="node_modules\jquery-weui\dist\css\jquery-weui.min.css">
+<link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
+<link rel="stylesheet" href="css\main.css">
+
+<!-- script -->
+<script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
+<script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
+<script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
+<script src="node_modules\jsrender\jsrender.min.js"></script>
+<script src="js\education.js"></script>
+
+
+</head>
+  <body ontouchstart>
+   <div class ="container" id ="container">
+      <div class="page">
+           <div class="page__hd">
+             <h1 class = "page__title">学区查询</h1>
+             <p class ="page__desc"></p>
+           </div>
+           <div class="page__bd page__bd_spacing">
+
+             <div class="weui-flex">
+               <div class="weui-flex__item">
+               <label><input name="school" type="radio" value="1" />通过学校查小区 </label>
+             </div>
+             <div class="weui-flex__item">
+              <label><input name="school" type="radio" value="1" />通过小区查学校 </label>
+             </div>
+           </div>
+           <div class="weui-flex" >
+           <div class="weui-flex__item">
+
+             <div class="box">
+               <div class="container1">
+                 <input type="search" id="search" placeholder="" />
+                 <a href="javascript:;" id="searchbtn" class = "weui-btn weui-btn-mini weui-btn__default ">查询</a>
+               </div>
+             </div>
+
+            </div>
+
+           </div>
+           <div id="result">
+
+           </div>
+
+           </div>
+
+
+         </div>
+
+
+          </div>
+
+      </div>
+
+  </body>
+
+</html>
