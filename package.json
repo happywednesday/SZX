@@ -12,6 +12,7 @@
   "author": "Jason",
   "license": "ISC",
   "dependencies": {
+    "d3": "^4.12.0",
     "font-awesome": "^4.7.0",
     "jquery-weui": "^1.0.1",
     "jsrender": "^0.9.89"

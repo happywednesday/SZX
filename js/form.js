@@ -194,7 +194,15 @@ var neighborConfig = {
       value: 8,
       description: ""
     }
-  ]
+  ],
+
+  onOpen: function(d) {
+     var div = $('<div>').html("注：附近是指房产800米范围内，即成人正常步行10分钟内").attr("id","popupfooter");
+
+      $(".weui-picker-modal").append(div);
+
+}
+
 };
 
 var featureConfig = {

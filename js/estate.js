@@ -11,8 +11,7 @@ var dic = {
   "secondary":"初中教育",
   "landscape":"景观环境",
   "medical":"医疗配套"
-
-}
+};
 
 
 var url = "json/estatedetails.json";
@@ -32,22 +31,20 @@ var url = "json/estatedetails.json";
   });
 
 
-
-
   function listAreaAttr(info){
-
 
     for(var key in info.data){
 
       var div = $('<div>').addClass("weui-cell");
-      $('divbody').append(div);
+      $('#divbody').append(div);
 
       var hddiv = $('<div>').addClass("weui-cell__hd");
       div.append(hddiv);
-
       var labeldiv = $('<label>').addClass("weui-label");
 
+
      if (!(key == "name" || key == "description")) {
+
        labeldiv.html(dic[key]);
        hddiv.append(labeldiv);
 
@@ -58,34 +55,26 @@ var url = "json/estatedetails.json";
        bardiv.css('width',String(info.data[key]*10)+"%");
        bardiv.html(info.data[key]);
        bddiv.append(bardiv);
-     }
-     else{
+
+     } else {
        if (key =="description"){
          labeldiv.html(dic[key]);
          hddiv.append(labeldiv);
 
-       var bddiv = $('<div>').addClass("weui-cell__bd");
-       div.append(bddiv);
+         var bddiv = $('<div>').addClass("weui-cell__bd");
+         div.append(bddiv);
 
-       var bardiv = $('<div>').html(info.data[key]);
-       bddiv.append(bardiv);
+         var bardiv = $('<div>').html(info.data[key]);
+         bddiv.append(bardiv);
      }
     else {
-     var styles ={
-       justifyContent : center,
-       fontSize:"18px"
-     };
 
+     div.attr("style","font-size:18px;justify-content:center");
      div.html(info.data[key]);
 
-   }
+   } }
+ }
+ }
 
-    }
-
-  }
-  }
-
-
-});
 
 });
