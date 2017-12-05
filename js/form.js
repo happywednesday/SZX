@@ -197,8 +197,8 @@ var neighborConfig = {
   ],
 
   onOpen: function(d) {
-     var div = $('<div>').html("注：附近是指房产800米范围内，即成人正常步行10分钟内").attr("id","popupfooter");
-
+     var div = $('<div>').html("注：附近是指房产800米范围内，即成人正常步行10分钟内");
+     div.css({"color":"grey","font-size":"12px","text-align":"right","padding":"0px 10px"});
       $(".weui-picker-modal").append(div);
 
 }

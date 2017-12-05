@@ -1,0 +1,41 @@
+ { "status":"",
+     "msg":"",
+     "data":[
+       {
+        "fybh": "10101",
+        "title": "大四房，采光好",
+        "size": "160平米",
+        "layout": "四室两厅",
+      "orientation":"东南",
+      "totalP":"1000万",
+      "unitP":"10万/平米",
+      "agent":"",
+      "img":"image/rate1.jpg",
+      "url":""
+ },
+   {
+     "fybh": "10101",
+     "title": "小三房，采光好",
+     "size": "95平米",
+     "layout": "三室两厅",
+   "orientation":"西南",
+   "totalP":"720万",
+   "unitP":"8万/平米",
+   "agent":"",
+   "img":"image/rate2.jpg",
+   "url":""
+     },
+     {
+       "fybh": "10101",
+       "title": "大两房，方正",
+       "size": "75平米",
+       "layout": "两室两厅",
+     "orientation":"东北",
+     "totalP":"550万",
+     "unitP":"7万/平米",
+     "agent":"",
+     "img":"image/rate3.jpg",
+     "url":""
+    }
+  ]
+    }

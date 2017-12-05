@@ -44,33 +44,41 @@
   <div class="weui-panel weui-panel_access">
   <!-- <div class="weui-panel__hd" id ="areaname"></div> -->
   <div class="weui-panel__bd" id="divbody">
-
     </div>
-
-
   <div class="weui-panel__ft"></div>
 </div>
     </div>
+
     <div id="tab2" class="weui-tab__bd-item">
+      <div class = "weui-cell">
+        <div class="weui-cell__hd">
+          <label class ="weui-label" style="width:100px">景田片区</label>
+        </div>
+        <div class="weui-cell__bd">
+          <div>
+          <input id="checkbox" type="checkbox" /><label style="font-size:12px" for="checkbox">房源剔重</label></div>
+        </div>
+        <div class = "weui-cell__ft" style = "color:red;font-size:12px;">共有12个小区</div>
+      </div>
       <div class="weui-panel weui-panel_access" >
 
       <!-- <div class="weui-panel__hd"></div> -->
-      <div class="weui-panel__bd" id = "estatelist">
-      <script id = "estatetemplate" type = "text/x-jsrender">
+      <div class="weui-panel__bd" id = "listing">
+      <script id = "listingtemplate" type = "text/x-jsrender">
 
         <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
           <div class="weui-media-box__hd">
-           <img class="weui-media-box__thumb" src="image/rate1.jpg">
+           <img class="weui-media-box__thumb" src={{:img}}>
           </div>
           <div class="weui-media-box__bd">
           <table style="width:80%">
            <tr>
-            <td>{{:xqmc}}</td>
-            <td>推荐指数： {{:cssj}}</td>
+            <td style="font-size:18px;">{{:title}}</td>
+            <td style="color:red;">{{:totalP}}</td>
            </tr>
            <tr>
-            <td>挂牌均价： {{:junjia}}</td>
-            <td>在售套数： {{:dtsj}}</td>
+            <td style="color:grey; font-size:16px;">{{:size}} | {{:layout}} | {{:orientation}}</td>
+            <td>{{:unitP}}</td>
           </tr>
          </table>
           </div>

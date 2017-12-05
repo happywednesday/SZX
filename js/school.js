@@ -11,6 +11,11 @@ $(document).ready(function(){
             var json = JSON.parse(data);
 
             listAttr(json);
+
+            var jsondata = json.data.xqlist;
+            var estatetplt = $.templates("#estatetemplate");
+            var html = estatetplt.render(jsondata);
+            $("#estatelist").html(html);
       }
     });
 
@@ -27,7 +32,7 @@ $(document).ready(function(){
 
        $('#passrate').html(info.data.passrate);
 
-      
+
 
 
 }

@@ -21,7 +21,7 @@ var mgr = new BMapLib.MarkerManager(map,{
 
   var type = "Cir";
   var url = "json/pianqu.json";
-  var unit = "套";
+  var unit = "个小区";
 
 
 
@@ -33,7 +33,7 @@ var mgr = new BMapLib.MarkerManager(map,{
        } else{
          type = "Cir";
          url = "json/pianqu.json";
-         unit = "套";
+         unit = "个小区";
        }
 
        this.clearOverlays();
@@ -59,7 +59,7 @@ var mgr = new BMapLib.MarkerManager(map,{
               for (; i < json.data.length;++i){
                 pt = new BMap.Point(parseFloat(json.data[i].lng), parseFloat(json.data[i].lat));
 
-                var myOverlay = new RectangularOverlay(pt,json.data[i].name +"  "+ json.data[i].price + unit,type);
+                var myOverlay = new RectangularOverlay(pt,json.data[i].name +"  "+ json.data[i].price +unit,type);
 
                 map.addOverlay(myOverlay);
 

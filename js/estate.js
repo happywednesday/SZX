@@ -21,14 +21,24 @@ var url = "json/estatedetails.json";
      dataType:"text",
      success: function(data){
           var json = JSON.parse(data);
-
           listAreaAttr(json);
-
-          // var estatetplt = $.templates("#estatetemplate");
-          // var html = estatetplt.render(json);
-          // $("#estatelist").html(html);
     }
   });
+
+  var url1 = "json/listing.json";
+
+    $.ajax({
+       url:url1,
+       dataType:"text",
+       success: function(data){
+            var json = JSON.parse(data).data;
+
+
+            var estatetplt = $.templates("#listingtemplate");
+            var html = estatetplt.render(json);
+            $("#listing").html(html);
+      }
+    });
 
 
   function listAreaAttr(info){
@@ -46,7 +56,9 @@ var url = "json/estatedetails.json";
      if (!(key == "name" || key == "description")) {
 
        labeldiv.html(dic[key]);
+       labeldiv.css("width","100px");
        hddiv.append(labeldiv);
+
 
        var bddiv = $('<div>').addClass("weui-cell__bd chart");
        div.append(bddiv);
@@ -59,6 +71,7 @@ var url = "json/estatedetails.json";
      } else {
        if (key =="description"){
          labeldiv.html(dic[key]);
+         labeldiv.css("width","100px");
          hddiv.append(labeldiv);
 
          var bddiv = $('<div>').addClass("weui-cell__bd");

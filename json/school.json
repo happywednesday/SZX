@@ -2,26 +2,35 @@
      "msg":"",
      "data":
        {
-  
+
         "name": "深圳市实验中学(初中部)",
         "rate": 5,
         "desc":"深圳最好中学",
-        "passrate":0.8,
-        "estate":[
+        "enro_rate":0.8,
+        "xqlist":[
           {
+            "id":"10101",
             "name":"国际中旅花园",
-            "desc":"secondary text",
-            "price":11
+            "grade":"secondary text",
+            "price":"11万/平米",
+            "img":"image/rate1.jpg",
+            "url":""
             },
             {
+              "id":"10102",
               "name":"香榭丽花园",
-              "desc":"secondary text",
-              "price":10
+              "grade":"secondary text",
+              "price":"10万/平米",
+              "img":"image/rate1.jpg",
+              "url":""
             },
             {
+              "id":"10103",
               "name":"东海花园",
-              "desc":"secondary text",
-              "price":9.5
+              "grade":"secondary text",
+              "price":"9.5万/平米",
+              "img":"image/rate1.jpg",
+              "url":""
             }]
 
  }
