@@ -152,7 +152,7 @@ d3.bullet = function() {
           .style("opacity", 1e-6)
           .remove();
     });
-    d3.timer.flush();
+    // d3.timer.flush();
   }
 
   // left, right, top, bottom
@@ -236,4 +236,4 @@ function bulletWidth(x) {
   };
 }
 
-})();
+});

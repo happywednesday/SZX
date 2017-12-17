@@ -18,7 +18,7 @@
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="node_modules\jsrender\jsrender.min.js"></script>
 <script src="js\estate.js"></script>
-
+<script src="js\service.js"></script>
 
 </head>
   <body ontouchstart>
@@ -52,7 +52,7 @@
     <div id="tab2" class="weui-tab__bd-item">
       <div class = "weui-cell">
         <div class="weui-cell__hd">
-          <label class ="weui-label" style="width:100px">景田片区</label>
+          <label class ="weui-label" style="width:200px" id="estatename"></label>
         </div>
         <div class="weui-cell__bd">
           <div>
@@ -66,7 +66,7 @@
       <div class="weui-panel__bd" id = "listing">
       <script id = "listingtemplate" type = "text/x-jsrender">
 
-        <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+        <a href= {^{:url}} class="weui-media-box weui-media-box_appmsg">
           <div class="weui-media-box__hd">
            <img class="weui-media-box__thumb" src={{:img}}>
           </div>

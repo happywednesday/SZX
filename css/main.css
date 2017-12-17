@@ -33,7 +33,7 @@
   color: white;
 }
 
-body,html,#resultmap{
+body,html,#resultmap,#heatmap,#flyroute{
 width: 100%;
 height: 100%;
 overflow: auto;

@@ -20,7 +20,7 @@
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="node_modules\jsrender\jsrender.min.js"></script>
 <script src="js\pqestate.js"></script>
-
+<script src="js\service.js"></script>
 
 </head>
   <body ontouchstart>
@@ -34,9 +34,9 @@
 
              <div class = "weui-cell">
                <div class="weui-cell__bd">
-                 <label class ="weui-label">景田片区</label>
+                 <label class ="weui-label" id="pqname"></label>
                </div>
-               <div class = "weui-cell__ft" style = "color:red;font-size:12px;">共有12个小区</div>
+               <div class = "weui-cell__ft" style = "color:red;font-size:12px;" id="xqcount"></div>
              </div>
 
              <div class="weui-panel weui-panel_access" >
@@ -45,7 +45,7 @@
              <div class="weui-panel__bd" id = "estatelist">
              <script id = "estatetemplate" type = "text/x-jsrender">
 
-               <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+               <a href="estate.html?id={^{:id}}" class="weui-media-box weui-media-box_appmsg">
                  <div class="weui-media-box__hd">
                   <img class="weui-media-box__thumb" src={{:img}}>
                  </div>

@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 var dic = {
-  "description":"片区简介",
+  "description":"小区简介",
   "overall":"总体评价",
   "planning":"区域规划",
   "metro":"轨道交通",
@@ -13,15 +13,16 @@ var dic = {
   "medical":"医疗配套"
 };
 
-
-var url = "json/estatedetails.json";
+var id = getUrlParam("id");
 
   $.ajax({
-     url:url,
+     url:requestData("estate",id),
      dataType:"text",
      success: function(data){
           var json = JSON.parse(data);
           listAreaAttr(json);
+          $("#estatename").html(json.data.name);
+
     }
   });
 
@@ -37,6 +38,7 @@ var url = "json/estatedetails.json";
             var estatetplt = $.templates("#listingtemplate");
             var html = estatetplt.render(json);
             $("#listing").html(html);
+
       }
     });
 

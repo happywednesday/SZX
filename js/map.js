@@ -11,18 +11,11 @@ mapTypes:[
 map.setCurrentCity("深圳");
 map.enableScrollWheelZoom(true);
 
-// display different marker according to the zoom level
-var padding = 200;
-var mgr = new BMapLib.MarkerManager(map,{
-  borderPadding: padding,
-  maxZoom:19,
-  trackMarkers:true
-});
+
 
   var type = "Cir";
   var url = "json/pianqu.json";
   var unit = "个小区";
-
 
 
     map.addEventListener("zoomend", function() {
@@ -43,6 +36,7 @@ var mgr = new BMapLib.MarkerManager(map,{
 
   getMarks(url,type,unit);
 
+
  function getMarks(url,type,unit){
 
  	 var pt = null;
@@ -59,8 +53,7 @@ var mgr = new BMapLib.MarkerManager(map,{
               for (; i < json.data.length;++i){
                 pt = new BMap.Point(parseFloat(json.data[i].lng), parseFloat(json.data[i].lat));
 
-                var myOverlay = new RectangularOverlay(pt,json.data[i].name +"  "+ json.data[i].price +unit,type);
-
+                var myOverlay = new RectangularOverlay(pt,json.data[i].id,json.data[i].name+" "+json.data[i].price +unit,type);
                 map.addOverlay(myOverlay);
 
            }
@@ -69,21 +62,44 @@ var mgr = new BMapLib.MarkerManager(map,{
             alert('Error loading data');
          }
 
-
       });
-
 
 }
 
-function RectangularOverlay(point, text,type){
+function RectangularOverlay(point,id,text,type){
       this._point = point;
       this._text = text;
+      this._id=id;
       this._type = type;
 
     }
+
+var startPos, endPos;
+
+function handleDivEvent(hyperlink) {
+  return function(evt) {
+    if (evt.type == 'touchstart') {
+      var touch = evt.targetTouches[0];
+      startPos = {x:touch.pageX,y:touch.pageY};
+      endPos = {x:touch.pageX,y:touch.pageY};
+    }
+    else if (evt.type == 'touchmove') {
+      var touch = evt.targetTouches[0];
+      endPos = {x:touch.pageX,y:touch.pageY};
+    }
+    else if (evt.type == 'touchend') {
+      //alert(String(endPos.x-startPos.x)+";"+String(endPos.y-startPos.y));
+      if (Math.abs(endPos.x-startPos.x)<10 && Math.abs(endPos.y-startPos.y)<10) {
+        window.location.href = hyperlink;
+      }
+    }
+  }
+}
+
 RectangularOverlay.prototype = new BMap.Overlay();
 RectangularOverlay.prototype.initialize = function(targetmap){
   this._map = targetmap;
+  var hyperlink = "";
   var div = this._div = document.createElement("div");
       div.style.position = "absolute";
       div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
@@ -104,8 +120,28 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       div.style.height = "100px";
       div.style.width = "100px";
       div.style.borderRadius = "50%";
+
+      hyperlink = "pqestate.html?id=" + this._id;
+      
+      div.addEventListener('touchstart',handleDivEvent(hyperlink));
+      div.addEventListener('touchmove',handleDivEvent(hyperlink));
+      div.addEventListener('touchend',handleDivEvent(hyperlink));
+
+      div.onclick = function(e){
+          window.location.href = hyperlink;
+        }
+
     } else{
       div.style.height = "25px";
+      hyperlink = "estate.html?id=" + this._id;
+
+      div.addEventListener('touchstart',handleDivEvent(hyperlink));
+      div.addEventListener('touchmove',handleDivEvent(hyperlink));
+      div.addEventListener('touchend',handleDivEvent(hyperlink));
+
+      div.onclick = function(e){
+          window.location.href = hyperlink;
+        }
     }
 
       var span = this._span = document.createElement("span");
@@ -114,12 +150,9 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       var that = this;
 
 
-      div.onclick = function(){
-          window.location.href = "estate.html";
-            }
 
       map.getPanes().labelPane.appendChild(div);
-      return div;
+     return div;
 }
 
 RectangularOverlay.prototype.draw = function(){

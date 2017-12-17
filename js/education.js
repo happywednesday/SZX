@@ -19,9 +19,14 @@ $("#searchbtn").click(function(e){
   function listAreaAttr(info){
 
     for(var key in info.data){
+      
+      var alink = $('<a>').attr("href","school.html?id="+info.data[key].id);
+      alink.css("color","black");
+      $('#result').append(alink);
 
       var div = $('<div>').addClass("weui-cell");
-      $('#result').append(div);
+      alink.append(div);
+
 
       var hddiv = $('<div>').addClass("weui-cell__hd");
       div.append(hddiv);

@@ -18,7 +18,9 @@
 <script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="node_modules\jsrender\jsrender.min.js"></script>
+<script src="node_modules\d3\build\d3.min.js"></script>
 <script src="js\school.js"></script>
+<script src="js\service.js"></script>
 
 
 </head>
@@ -57,8 +59,9 @@
            <div class="weui-flex__item">
            <label>历年升学率： </label>
          </div>
-         <div class="weui-flex__item" >
-          <label id="passrate"> </label>
+         <div class="weui-flex__item">
+              <div id = "enrorate" style="width:130px"></div>
+
          </div>
          <div class="weui-flex__item" >
          </div>
@@ -72,7 +75,7 @@
        <div class="weui-panel__bd" id = "estatelist">
        <script id = "estatetemplate" type = "text/x-jsrender">
 
-         <a href="javascript:void(0);" class="weui-media-box weui-media-box_appmsg">
+         <a href="estate.html?id={^{:id}}" class="weui-media-box weui-media-box_appmsg">
            <div class="weui-media-box__hd">
             <img class="weui-media-box__thumb" src={{:img}}>
            </div>

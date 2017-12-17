@@ -3,14 +3,29 @@
      "data":
        {
 
-        "name": "深圳市实验中学(初中部)",
+        "name": "深圳市中学",
         "rate": 5,
-        "desc":"深圳最好中学",
-        "enro_rate":0.8,
+        "desc":"深圳不错中学",
+        "enro_rate":[
+        {
+          "year":"2016",
+           "rate":"71.5%",
+            "type":"四大"
+        },
+        {
+          "year":"2015",
+           "rate":"65.4%",
+            "type":"四大"
+        },
+        {
+          "year":"2014",
+           "rate":"78%",
+            "type":"四大"
+        }],
         "xqlist":[
           {
-            "id":"10101",
-            "name":"国际中旅花园",
+            "id": "c99730a2e1b7ad2bfd9d430f27d32dd5",
+            "name": "莲花一村",
             "grade":"secondary text",
             "price":"11万/平米",
             "img":"image/rate1.jpg",

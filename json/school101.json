@@ -1,0 +1,52 @@
+ { "status":"",
+     "msg":"",
+     "data":
+       {
+
+        "name": "深圳市实验中学(初中部)",
+        "rate": 5,
+        "desc":"深圳最好中学",
+        "enro_rate":[
+        {
+          "year":"2016",
+           "rate":"71.5%",
+            "type":"四大"
+        },
+        {
+          "year":"2015",
+           "rate":"65.4%",
+            "type":"四大"
+        },
+        {
+          "year":"2014",
+           "rate":"78%",
+            "type":"四大"
+        }],
+        "xqlist":[
+          {
+            "id": "5a96cc5969c2309d0f458fc1bd24c1de",
+            "name": "景田燃气综合楼",
+            "grade":"secondary text",
+            "price":"11万/平米",
+            "img":"image/rate1.jpg",
+            "url":""
+            },
+            {
+              "id": "9aef3bc173db0130d499f4f50eeda8f5",
+              "name": "景田西",
+              "grade":"secondary text",
+              "price":"10万/平米",
+              "img":"image/rate1.jpg",
+              "url":""
+            },
+            {
+              "id": "e1714bf0c529124d32f6c0926886a20b",
+              "name": "景田翠景园",
+              "grade":"secondary text",
+              "price":"9.5万/平米",
+              "img":"image/rate1.jpg",
+              "url":""
+            }]
+
+ }
+ }
