@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <script src="..\node_modules\d3\build\d3.min.js"></script>
+    <script src="..\js\bullet.js"></script>
+  </head>
+  <body>
+    <style>
+    .bullet { font: 10px Microsoft Yahei; }
+    .bullet .marker { stroke: #000; stroke-width: 2px; }
+    .bullet .tick line { stroke: #666; stroke-width: .5px; }
+    .bullet .range.s0 { fill: #eee; }
+    .bullet .range.s1 { fill: #ddd; }
+    .bullet .range.s2 { fill: #ccc; }
+    .bullet .measure.s0 { fill: #ddd; }
+    .bullet .measure.s1 { fill: lightsteelblue; }
+    .bullet .measure.s2 { fill: steelblue; }
+    .bullet .title { font-size: 12px;  }
+    .bullet .subtitle { fill: #999; }
+    </style>
+
+  <script>
+  var margin = {top: 5, right: 40, bottom: 20, left: 40},
+  width = 270 - margin.left - margin.right,
+  height = 50 - margin.top - margin.bottom;
+
+  var data =[{"title":"2016","measures":[78,90,100]},
+             {"title":"2015","measures":[65.4,82,100]},
+             {"title":"2014","measures":[80,92,100]}];
+  var chart = d3.bullet()
+  .width(width)
+  .height(height);
+
+   var svg = d3.select("body").selectAll("svg").data(data)
+       .enter().append("svg")
+         .attr("class","bullet")
+         .attr("width",width+margin.left+margin.right)
+         .attr("height",height+margin.top+margin.bottom)
+        .append("g")
+          .attr("transform","translate("+margin.left+","+margin.top+")")
+          .call(chart.duration(1000));
+
+
+   var title = svg.append("g")
+      .style("text-anchor","end")
+      .attr("transform","translate(-6,"+height/2+")");
+
+    title.append("text")
+         .attr("class","title")
+         .text(function(d){return d.title;});
+
+  </script>
+</body>
+</html>

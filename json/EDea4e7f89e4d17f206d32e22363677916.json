@@ -3,7 +3,6 @@
  "data":
   {
     "name":"新洲花园综合楼",
-    "description":"如果你无法简洁的表达你的想法，那只是说明你还不够了解它",
     "overall":8.1,
     "planning":8.3,
     "metro":8.8,
@@ -13,5 +12,18 @@
     "secondary":6.4,
     "landscape":7.9,
     "medical":9.1
+  },
+  "attr":
+  {
+    "age":"2012年",
+    "area":"34532",
+    "fee":"2.3/平方米",
+    "management":"招商蛇口",
+    "developer":"万科房地产",
+    "bldgnum":"35",
+    "flatnum":"2310",
+    "ratio":"2.1",
+    "vegratio":"43%",
+    "parking":"690"
   }
 }

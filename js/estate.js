@@ -13,6 +13,10 @@ var dic = {
   "medical":"医疗配套"
 };
 
+ var link = document.querySelector('link[rel="import"]');
+ var template = link.import.querySelector("template");
+  $("#info").append(document.importNode(template.content,true));
+
 var id = getUrlParam("id");
 
   $.ajax({
@@ -20,10 +24,17 @@ var id = getUrlParam("id");
      dataType:"text",
      success: function(data){
           var json = JSON.parse(data);
-          listAreaAttr(json);
-          $("#estatename").html(json.data.name);
 
-    }
+          var attrtplt = $.templates("#attrtemplate");
+          var html = attrtplt.render(json.attr);
+          $("#attrlist").html(html);
+
+          listAreaAttr(json.data);
+          Mapinit();
+          },
+    error: function(err) {
+         $.toptip("未找到所需信息",'error');
+     }
   });
 
   var url1 = "json/listing.json";
@@ -34,10 +45,10 @@ var id = getUrlParam("id");
        success: function(data){
             var json = JSON.parse(data).data;
 
-
             var estatetplt = $.templates("#listingtemplate");
             var html = estatetplt.render(json);
             $("#listing").html(html);
+            $("#listingcount").html("共有"+json.length+"套");
 
       }
     });
@@ -45,17 +56,19 @@ var id = getUrlParam("id");
 
   function listAreaAttr(info){
 
-    for(var key in info.data){
-
+    for(var key in info){
+      var boxdiv = $('<div>');
       var div = $('<div>').addClass("weui-cell");
-      $('#divbody').append(div);
+      $('#barlist').append(boxdiv);
+      boxdiv.append(div);
+
 
       var hddiv = $('<div>').addClass("weui-cell__hd");
       div.append(hddiv);
       var labeldiv = $('<label>').addClass("weui-label");
 
 
-     if (!(key == "name" || key == "description")) {
+     if (!(key == "name")) {
 
        labeldiv.html(dic[key]);
        labeldiv.css("width","100px");
@@ -66,30 +79,39 @@ var id = getUrlParam("id");
        div.append(bddiv);
 
        var bardiv = $('<div>');
-       bardiv.css('width',String(info.data[key]*10)+"%");
-       bardiv.html(info.data[key]);
+       bardiv.css('width',String(info[key]*10)+"%");
+       bardiv.html(info[key]);
        bddiv.append(bardiv);
 
+       var colldiv =$('<div>').addClass("collapse").attr("id",key).html(key).css({"font-size":"12px","text-align":"center"});
+       boxdiv.append(colldiv);
+       div.attr({"data-toggle":"collapse","data-target":"#"+key,"aria-expanded":"false","aria-controls":key});
+
      } else {
-       if (key =="description"){
-         labeldiv.html(dic[key]);
-         labeldiv.css("width","100px");
-         hddiv.append(labeldiv);
-
-         var bddiv = $('<div>').addClass("weui-cell__bd");
-         div.append(bddiv);
-
-         var bardiv = $('<div>').html(info.data[key]);
-         bddiv.append(bardiv);
-     }
-    else {
-
-     div.attr("style","font-size:18px;justify-content:center");
-     div.html(info.data[key]);
-
-   } }
+     $('#estatename').html(info[key]);
+   }
  }
  }
+
+ function Mapinit(){
+   var map = new BMap.Map("xqmap");
+   map.centerAndZoom(new BMap.Point(114.0427, 22.552701), 15);
+
+   map.addControl(new BMap.MapTypeControl({
+   mapTypes:[
+           BMAP_NORMAL_MAP
+       ]}));
+   map.setCurrentCity("深圳");
+   map.enableScrollWheelZoom(true);
+ }
+
+
+
+
+
+
+
+
 
 
 });

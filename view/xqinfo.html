@@ -1,0 +1,45 @@
+
+
+<template>
+  <div class="weui-panel__hd" id ="estatename"></div>
+  <div class="weui-panel__bd" id="attrlist">
+  <script id = "attrtemplate" type = "text/x-jsrender">
+      <table style="width:100%;text-align:center;vertical-align:middle;font-size:14px" >
+
+       <tr>
+        <td class="tablelabel">建造年代</td>
+        <td >{{:age}}</td>
+        <td class="tablelabel">停车位</td>
+        <td >{{:parking}}</td>
+       </tr>
+       <tr>
+         <td class="tablelabel">占地面积</td>
+         <td >{{:area}}</td>
+         <td class="tablelabel">总栋数</td>
+         <td >{{:bldgnum}}</td>
+      </tr>
+      <tr>
+        <td class="tablelabel">开发商</td>
+        <td >{{:developer}}</td>
+        <td class="tablelabel">总套数</td>
+        <td >{{:flatnum}}</td>
+     </tr>
+     <tr>
+       <td class="tablelabel">物业管理费</td>
+       <td >{{:fee}}</td>
+       <td class="tablelabel">容积率</td>
+       <td >{{:ratio}}</td>
+    </tr>
+    <tr>
+      <td class="tablelabel">物业管理公司</td>
+      <td >{{:management}}</td>
+      <td class="tablelabel">绿化率</td>
+      <td >{{:vegratio}}</td>
+   </tr>
+     </table>
+</script>
+</div>
+      <div id="barlist"></div>
+      
+      <div class="weui-panel__ft"></div>
+</template>

@@ -18,7 +18,7 @@
         "unitP": "8.5万/平米",
         "rate": 8.0,
       "onSale":14,
-      "img":"image/rate2.jpg"
+      "img":"image/rate3.jpg"
      },
      {
        "id": "0747736b2cb0f7544ee626f0910d3db2",
@@ -26,7 +26,7 @@
          "unitP": "9.0万/平米",
          "rate": 8.7,
        "onSale":8,
-       "img":"image/rate3.jpg"
+       "img":"image/rate2.jpg"
     },
     {
       "id": "2903afef9f9724ddfc191d04dca456e0",
@@ -34,7 +34,7 @@
         "unitP": "9.0万/平米",
         "rate": 8.7,
       "onSale":8,
-      "img":"image/rate3.jpg"
+      "img":"image/rate1.jpg"
    },
    {
      "id": "67b362852f85bace5d6987635d965f27",

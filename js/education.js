@@ -1,25 +1,55 @@
 $(document).ready(function(){
 
-$("#searchbtn").click(function(e){
+$("#searchbtn").on('click',function(e){
+  loadData();
 
+});
+
+function loadData(){
   $("#result").empty();
 
-  var url = "json/education.json";
+ var selMode =  $("input[name='school']:checked").val();
+ if (selMode == "1") {
+   var link = document.querySelector('link[rel="import"]');
+   var template = link.import.querySelector("template");
+    $("#result").append(document.importNode(template.content,true));
 
+
+    $.ajax({
+       url:requestData("pqestate",$("#search").val()),
+       dataType:"text",
+       success: function(data){
+
+            var json = JSON.parse(data).data.xq;
+
+            var estatetplt = $.templates("#estatetemplate");
+            var html = estatetplt.render(json);
+            $("#estatelist").html(html);
+
+            $.showLoading();
+            setTimeout(function(){
+              $.hideLoading();
+            },1000);
+      },
+      error: function(err) {
+        $.toptip("无搜索结果",'error');
+       }
+     });
+
+ } else if (selMode =="2"){
+
+  var url = "json/education.json";
     $.ajax({
        url:url,
        dataType:"text",
        success: function(data){
             var json = JSON.parse(data);
-
             listAreaAttr(json);
       }
-    });
-
+    });}
+}
   function listAreaAttr(info){
-
     for(var key in info.data){
-      
       var alink = $('<a>').attr("href","school.html?id="+info.data[key].id);
       alink.css("color","black");
       $('#result').append(alink);
@@ -39,23 +69,8 @@ $("#searchbtn").click(function(e){
       for (var i= 0 ;i<info.data[key].rate;i++){
         var star = $('<span>').addClass("fa fa-star");
         hddiv.append(star);
-
-        // var margin = {top: 5, right: 40, bottom: 20, left: 120},
-        // width = 960 - margin.left - margin.right,
-        // height = 50 - margin.top - margin.bottom;
-        //
-        // var chart = d3.bullet()
-        // .width(width)
-        // .height(height);
-        //
-        // d3.json("bullets.json", function(error, data) {
-        // if (error) throw error;
-
       }
+    }
+  }
 
-
-}}
-
-
-});
 });

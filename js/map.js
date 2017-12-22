@@ -122,7 +122,7 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       div.style.borderRadius = "50%";
 
       hyperlink = "pqestate.html?id=" + this._id;
-      
+
       div.addEventListener('touchstart',handleDivEvent(hyperlink));
       div.addEventListener('touchmove',handleDivEvent(hyperlink));
       div.addEventListener('touchend',handleDivEvent(hyperlink));
@@ -148,8 +148,6 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       div.appendChild(span);
       span.appendChild(document.createTextNode(this._text));
       var that = this;
-
-
 
       map.getPanes().labelPane.appendChild(div);
      return div;
