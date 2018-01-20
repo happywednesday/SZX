@@ -48,3 +48,14 @@ function returnicon(type){
   }
 
 }
+
+function checkAgent(){
+  var userAgent = navigator.userAgent;
+
+  if (userAgent.match(/MicroMessenger/i)!='MicroMessenger'){
+    alert('请使用微信浏览器');
+    var opened = window.open('about:blank','_self');
+    opened.opener=null;
+    opened.close();
+  }
+}

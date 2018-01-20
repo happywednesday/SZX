@@ -72,7 +72,6 @@ var points=[];
             var html = estatetplt.render(json);
             $("#listing").html(html);
             $("#listingcount").html("共有"+json.length+"套");
-
       }
     });
 
