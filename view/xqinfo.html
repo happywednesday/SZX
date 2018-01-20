@@ -1,7 +1,15 @@
 
 
 <template>
-  <div class="weui-panel__hd" id ="estatename"></div>
+  <div class="weui-panel__hd" >
+    <div class="weui-cell">
+    <div class="weui-cell__bd" id ="estatename"></div>
+    <div class="weui-cell__ft">
+  <button id="addtolist" type="button" class="weui-btn weui-btn_mini weui-btn_warn" value="1">+关注</button>
+  </div>
+</div>
+</div>
+  <!-- jsrender模版显示小区基本信息 -->
   <div class="weui-panel__bd" id="attrlist">
   <script id = "attrtemplate" type = "text/x-jsrender">
       <table style="width:100%;text-align:center;vertical-align:middle;font-size:14px" >
@@ -39,7 +47,8 @@
      </table>
 </script>
 </div>
+      <!-- 柱状图显示区域 -->
       <div id="barlist"></div>
-      
+
       <div class="weui-panel__ft"></div>
 </template>

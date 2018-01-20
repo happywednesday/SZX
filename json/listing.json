@@ -9,33 +9,81 @@
       "orientation":"东南",
       "totalP":"1000万",
       "unitP":"10万/平米",
-      "agent":"",
       "img":"image/rate1.jpg",
-      "url":"https://sz.lianjia.com/ershoufang/105101097601.html"
+      "listing":[
+        {
+          "agent":"lianjia",
+          "total":"1000万",
+          "unit":"10万/平米",
+          "url":"https://sz.lianjia.com/ershoufang/105101097601.html"
+        },
+        {
+          "agent":"jiajiashun",
+          "total":"980万",
+          "unit":"9.8万/平米",
+          "url":"http://esf.sz.fang.com/chushou/3_202654458.htm"
+        },
+        {
+          "agent":"zhongyuan",
+          "total":"1020万",
+          "unit":"10.2万/平米",
+          "url":"http://shenzhen.qfang.com/sale/100074576"
+        }
+      ]
  },
    {
-     "fybh": "10101",
+     "fybh": "10102",
      "title": "小三房，采光好",
      "size": "95平米",
      "layout": "三室两厅",
    "orientation":"西南",
    "totalP":"720万",
    "unitP":"8万/平米",
-   "agent":"",
    "img":"image/rate2.jpg",
-   "url":"http://shenzhen.qfang.com/sale/100074576"
+   "listing":[
+     {
+       "agent":"lianjia",
+       "total":"750万",
+       "unit":"10.2万/平米",
+       "url":"http://shenzhen.qfang.com/sale/100074576"
      },
      {
-       "fybh": "10101",
+       "agent":"zhongyuan",
+       "total":"680万",
+       "unit":"10万/平米",
+       "url":"http://esf.sz.fang.com/chushou/3_202654458.htm"
+     }
+   ]
+     },
+     {
+       "fybh": "10103",
        "title": "大两房，方正",
        "size": "75平米",
        "layout": "两室两厅",
      "orientation":"东北",
      "totalP":"550万",
      "unitP":"7万/平米",
-     "agent":"",
      "img":"image/rate3.jpg",
-     "url":"http://esf.sz.fang.com/chushou/3_202654458.htm"
+     "listing":[
+       {
+         "agent":"lianjia",
+         "total":"550万",
+         "unit":"10万/平米",
+         "url":"http://esf.sz.fang.com/chushou/3_202654458.htm"
+       },
+       {
+         "agent":"jiajiashun",
+         "total":"500万",
+         "unit":"10.2万/平米",
+         "url":"http://shenzhen.qfang.com/sale/100074576"
+       },
+       {
+         "agent":"zhongyuan",
+         "total":"600万",
+         "unit":"10.2万/平米",
+         "url":"https://sz.lianjia.com/ershoufang/105101097601.html"
+       }
+     ]
     }
   ]
     }

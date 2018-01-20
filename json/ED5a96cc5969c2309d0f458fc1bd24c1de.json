@@ -1,8 +1,7 @@
 {"status":"",
  "msg":"",
- "data":
+ "evaluation_info":
   {
-    "name":"景田燃气综合楼",
     "overall":8.1,
     "planning":8.3,
     "metro":8.8,
@@ -13,8 +12,13 @@
     "landscape":7.9,
     "medical":9.1
   },
-  "attr":
+  "basic_info":
   {
+    "id":"5a96cc5969c2309d0f458fc1bd24c1de",
+    "name":"景田燃气综合楼",
+    "alias":"景田燃综",
+    "lat": 22.5601387258,
+    "lng": 114.047976463,
     "age":"2012年",
     "area":"34532",
     "fee":"2.3/平方米",

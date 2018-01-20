@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
 <html>
   <head>
-    <title>小区列表</title>
+    <title>我关注的小区</title>
     <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -13,31 +12,27 @@
 <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
 <link rel="stylesheet" href="css\main.css">
 <!-- view -->
-<link rel="import" href="view\xqlisting.html">
+<link rel="import" href="view\favoritelist.html">
 <!-- script -->
-<script src="node_modules\d3\build\d3.min.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="node_modules\jsrender\jsrender.min.js"></script>
-<script src="js\pqestate.js"></script>
+<script src="js\favorite.js"></script>
 <script src="js\service.js"></script>
 
 </head>
   <body ontouchstart>
    <div class ="container" id ="container">
       <div class="page">
-           <!-- <div class="page__hd">
-             <h1 class = "page__title">学区查询</h1>
-             <p class ="page__desc"></p>
-           </div> -->
+
            <div class="page__bd page__bd_spacing">
 
              <div class = "weui-cell">
                <div class="weui-cell__bd">
-                 <label class ="weui-label" id="pqname"></label>
+                 <label class ="weui-label">我的关注</label>
                </div>
-               <div class = "weui-cell__ft" style = "color:red;font-size:12px;" id="xqcount"></div>
+               <!-- <div class = "weui-cell__ft" style = "color:red;font-size:12px;" id="xqcount"></div> -->
              </div>
             <div id="result"></div>
          </div>
