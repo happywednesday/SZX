@@ -1,7 +1,6 @@
 $(document).ready(function(){
 // 字典
 var dic = {
-  "description":"小区简介",
   "overall":"总体评价",
   "planning":"区域规划",
   "metro":"轨道交通",
@@ -33,9 +32,18 @@ var points=[];
           // 显示小区名称
           $('#estatename').html(json.basic_info.name);
           // 利用jquery显示评价指标柱状图
+
           listAreaAttr(json.evaluation_info);
           // 小区坐标和配套设施坐标批量显示，并未做显示图标区分
           points.push(new BMap.Point(json.basic_info.lng,json.basic_info.lat));
+
+         // 将服务器回传数据变换到bubblechart所需的格式
+         var data=[];
+         for(var key in json.evaluation_info) {
+         data.push({text:dic[key],count:json.evaluation_info[key]});
+       }
+          // 将评价指标数据传给子窗口
+          $('#childFrame').attr('src','view/bubblechart.html?idx='+encodeURI(encodeURI(JSON.stringify(data))));
 
           },
     error: function(err) {
@@ -52,6 +60,7 @@ var points=[];
            facilitygen(json.data);
            // 初始化地图并显示小区和配套位置
            Mapinit(points);
+
           },
     error: function(err) {
          $.toptip("未找到所需信息",'error');
