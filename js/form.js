@@ -36,8 +36,7 @@ $(document).ready(function(){
             input:"100-200万",
             empty: false,
             onOK: function(input){
-              d.titles=input;
-
+                $("#budget").val(input);
             }
           });
 
@@ -84,8 +83,7 @@ var sizeConfig ={
           input:"50-80",
           empty: false,
           onOK: function(input){
-            d.titles=input;
-
+              $("#size").val(input);
           }
         });
 
@@ -141,13 +139,19 @@ var districtConfig = {
     } ],
 
     onChange: function(d) {
-      var found = d.values.includes("0");
-      if (found) {
-        $("#district").select("update",
-          {multi:false});
+      var found = d.titles.includes("不限");
 
-      }
-}
+      if (found) {
+        $("#district").select("close");
+        d.titles="";
+        d.values=0;
+
+        }
+
+      //   $("#district").select("update",
+      //     {multi:false});
+      // }
+    }
 };
 
 var neighborConfig = {
@@ -231,10 +235,30 @@ var featureConfig = {
 $("#budget").select(budgetConfig);
 $("#size").select(sizeConfig);
 $("#district").select(districtConfig);
-$("#neighbor").select(neighborConfig);
-$("#feature").select(featureConfig);
+// $("#neighbor").select(neighborConfig);
+// $("#feature").select(featureConfig);
 
+var taglist =["地铁","大型购物中心","大型超市","百货商场","公园","位于优质小学学区",
+              "位于优质中学学区","景观好","有电梯","高楼层","有内部花园"]
+var taglistNode = $("#taglist");
+for(i=0;i<taglist.length;i++){
+var a = $('<a>').addClass("weui-btn weui-btn_mini weui-btn_default").attr("value",0).html(taglist[i]).css("margin-left","5px").css("margin","5px 0px 0px 5px");
+taglistNode.append(a);
+}
 
+$(".weui-btn_mini").click(function(){
+
+  ($(this).attr('value')==0)?changecss(this):unchangecss(this)
+  function changecss(target){
+  $(target).css({"background-color":"white","color":"red","border-color":"red","border-style":"solid","border-width":"1px"});
+  $(target).attr("value",1);
+ }
+ function unchangecss(target){
+   $(target).removeAttr('style');
+   $(target).css("margin","5px 0px 0px 5px");
+   $(target).attr("value",0);
+ }
+});
 
 
 });
