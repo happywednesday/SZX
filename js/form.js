@@ -232,19 +232,32 @@ var featureConfig = {
 };
 
 //implement Select
-$("#budget").select(budgetConfig);
-$("#size").select(sizeConfig);
-$("#district").select(districtConfig);
+// $("#budget").select(budgetConfig);
+// $("#size").select(sizeConfig);
+// $("#district").select(districtConfig);
 // $("#neighbor").select(neighborConfig);
 // $("#feature").select(featureConfig);
 
-var taglist =["地铁","大型购物中心","大型超市","百货商场","公园","位于优质小学学区",
-              "位于优质中学学区","景观好","有电梯","高楼层","有内部花园"]
-var taglistNode = $("#taglist");
-for(i=0;i<taglist.length;i++){
-var a = $('<a>').addClass("weui-btn weui-btn_mini weui-btn_default").attr("value",0).html(taglist[i]).css("margin-left","5px").css("margin","5px 0px 0px 5px");
-taglistNode.append(a);
+
+
+var dataset = [
+  {"budget": ["200万以内","200至400","400至600","600至800","800至1000","大于1000"]},
+  {"size" :["小于50","50至70","70至90","90至140","140至160","大于160"]},
+  {"region":["罗湖","福田","南山","盐田","龙华","龙岗","宝安","坪山","大鹏新区","光明新区"]},
+  {"facility":["地铁","大超市","购物中心","百货商场","公园","优质小学","优质中学","景观好"]},
+  {"feature":["有电梯","高楼层","有内部花园"]}
+]
+
+$(dataset).each(function(data){
+  var item = Object.values(dataset[data])[0];
+  var targetNode = $("#"+Object.keys(dataset[data])[0]);
+  for(i=0;i<item.length;i++){
+  var a = $('<a>').addClass("weui-btn weui-btn_mini weui-btn_default").attr("value",0).html(item[i]).css("margin","5px 0px 0px 5px");
+  targetNode.append(a);
 }
+});
+
+
 
 $(".weui-btn_mini").click(function(){
 

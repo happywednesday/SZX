@@ -1,15 +1,17 @@
 $(document).ready(function(){
 
 $("#searchbtn").on('click',function(e){
+
   loadData();
 });
 
 function loadData(){
   $("#result").empty();
   // 利用html5 <template> view/favoritelist.html模版显示小区基本信息
-   var link = document.querySelector('link[rel="import"]');
-   var template = link.import.querySelector("template");
-    $("#result").append(document.importNode(template.content,true));
+  //  var link = document.querySelector('link[rel="import"]');
+  //  var template = link.import.querySelector("template");
+  //   $("#result").append(document.importNode(template.content,true));
+
 
    // 根据名称 利用GET向服务器请求小区列表
     $.ajax({

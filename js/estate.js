@@ -12,9 +12,9 @@ var dic = {
   "medical":"医疗配套"
 };
 // 利用html5 <template> view/xqinfo.html模版显示小区基本信息
- var link = document.querySelector('link[rel="import"]');
- var template = link.import.querySelector("template");
-  $("#info").append(document.importNode(template.content,true));
+ // var link = document.querySelector('link[rel="import"]');
+ // var template = link.import.querySelector("template");
+ //  $("#info").append(document.importNode(template.content,true));
 // 解读传入参数（小区id）
 var id = getUrlParam("id");
 var points=[];

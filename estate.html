@@ -49,7 +49,63 @@
   <div class="weui-tab__bd">
     <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
       <!-- 通过template导入 -->
-       <div class="weui-panel weui-panel_access" id="info"></div>
+       <div class="weui-panel weui-panel_access" id="info">
+         <div class="weui-panel__hd" >
+           <div class="weui-cell">
+           <div class="weui-cell__bd" id ="estatename"></div>
+           <div class="weui-cell__ft">
+         <button id="addtolist" type="button" class="weui-btn weui-btn_mini weui-btn_warn" value="1">+关注</button>
+         </div>
+       </div>
+       </div>
+         <!-- jsrender模版显示小区基本信息 -->
+         <div class="weui-panel__bd" id="attrlist">
+         <script id = "attrtemplate" type = "text/x-jsrender">
+             <table style="width:100%;text-align:center;vertical-align:middle;font-size:14px" >
+
+              <tr>
+               <td class="tablelabel">建造年代</td>
+               <td >{{:age}}</td>
+               <td class="tablelabel">停车位</td>
+               <td >{{:parking}}</td>
+              </tr>
+              <tr>
+                <td class="tablelabel">占地面积</td>
+                <td >{{:area}}</td>
+                <td class="tablelabel">总栋数</td>
+                <td >{{:bldgnum}}</td>
+             </tr>
+             <tr>
+               <td class="tablelabel">开发商</td>
+               <td >{{:developer}}</td>
+               <td class="tablelabel">总套数</td>
+               <td >{{:flatnum}}</td>
+            </tr>
+            <tr>
+              <td class="tablelabel">物业管理费</td>
+              <td >{{:fee}}</td>
+              <td class="tablelabel">容积率</td>
+              <td >{{:ratio}}</td>
+           </tr>
+           <tr>
+             <td class="tablelabel">物业管理公司</td>
+             <td >{{:management}}</td>
+             <td class="tablelabel">绿化率</td>
+             <td >{{:vegratio}}</td>
+          </tr>
+            </table>
+       </script>
+       </div>
+             <!-- 柱状图显示区域 -->
+             <div id="barlist"></div>
+             <!-- bubblechart显示区域 -->
+             <div >
+             <iframe id="childFrame" height="400px" scrolling = "no" sandbox="allow-popups allow-scripts allow-forms allow-same-origin" marginwidth="0" marginheight="0" style ="border:1px;width:100%" ></iframe>
+           </div>
+
+             <div class="weui-panel__ft"></div>
+       </div>
+
     </div>
 
     <div id="tab2" class="weui-tab__bd-item">
@@ -65,8 +121,6 @@
         <div class = "weui-cell__ft" style = "color:red;font-size:12px;" id ="listingcount"></div>
       </div>
       <div class="weui-panel weui-panel_access" >
-
-      <!-- <div class="weui-panel__hd"></div> -->
 
       <!-- jsrender挂牌房源显示模版 -->
       <div class="weui-panel__bd" id = "listing">
