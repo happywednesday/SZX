@@ -11,8 +11,7 @@
 <link rel="stylesheet" href="node_modules\jquery-weui\dist\css\jquery-weui.min.css">
 <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
 <link rel="stylesheet" href="css\main.css">
-<!-- view -->
-<!-- <link rel="import" href="view\favoritelist.html"> -->
+
 <!-- script -->
 <script src="node_modules\d3\build\d3.min.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
@@ -41,9 +40,9 @@
                     <input type="search" id="search" placeholder="" list="l1" required/>
                     <!-- temporary setting -->
                     <datalist id="l1">
-                      <option>景田</option>
-                      <option>莲花</option>
-                      <option>新洲</option>
+                      <option>101</option>
+                      <option>102</option>
+                      <option>103</option>
                     </datalist>
                     <a href="javascript:" id="searchbtn" class = "weui-btn weui-btn-mini weui-btn__default ">查找</a>
                   </div>
@@ -53,8 +52,6 @@
 
            <!-- <div id="result"> </div> -->
            <div class="weui-panel weui-panel_access" >
-
-           <!-- <div class="weui-panel__hd"></div> -->
            <div class="weui-panel__bd" id = "estatelist">
            <script id = "estatetemplate" type = "text/x-jsrender">
              <a href="estate.html?id={^{:id}}" class="weui-media-box weui-media-box_appmsg">
@@ -78,6 +75,7 @@
               </script>
            </div>
          </div>
+
            </div>
           </div>
 

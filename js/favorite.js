@@ -1,10 +1,7 @@
 $(document).ready(function(){
 
 var id = getUrlParam("user");
-// 利用html5 <template> view/favoritelist.html模版显示用户关注小区信息
-var link = document.querySelector('link[rel="import"]');
-var template = link.import.querySelector("template");
- $("#result").append(document.importNode(template.content,true));
+
  // GET向服务器请求用户关注小区信息
     $.ajax({
        url:requestData("user",id),

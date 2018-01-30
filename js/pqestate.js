@@ -1,15 +1,7 @@
 $(document).ready(function(){
 // window.addEventListener('WebComponentsReady',function(){
 var id = getUrlParam("id");
-// 利用html5 <template> view/xqlisting.html模版显示小区列表
-// try{
-// var link = document.querySelector('link[rel="import"]');
-// var link = document.querySelector('#try')
 
-// var template = link.import.querySelector("template");
-// }catch(err){console.log(err);}
- // $("#result").append(document.importNode(template.content,true));
- // $("#result").append(link);
 // 根据片区ID 利用GET向服务器请求小区列表信息
     $.ajax({
        url:requestData("pqestate",id), //service.js中函数模拟服务器url，需根据实际服务器进行替换
