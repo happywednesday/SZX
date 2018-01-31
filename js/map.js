@@ -1,5 +1,6 @@
 // Baidu Map
 $(document).ready(function(){
+
 var map = new BMap.Map("resultmap");
 map.centerAndZoom(new BMap.Point(114.0427, 22.552701), 15);
 
@@ -11,52 +12,53 @@ mapTypes:[
 map.setCurrentCity("深圳");
 map.enableScrollWheelZoom(true);
 
-
-
-  var type = "Cir";
-  var url = "json/pianqu.json";
-  var unit = "个小区";
-
-
-    map.addEventListener("zoomend", function() {
-       if (this.getZoom() > 15){
-         type = "Rec";
-         url = "json/data.json";
-         unit = "万";
-       } else{
-         type = "Cir";
-         url = "json/pianqu.json";
-         unit = "个小区";
-       }
-
-       this.clearOverlays();
-       getMarks(url,type,unit);
-
-    });
-
-  getMarks(url,type,unit);
-
-
- function getMarks(url,type,unit){
-
  	 var pt = null;
  	 var i = 0;
-
+  //  解析问卷穿来的参数
+   var paradata = JSON.parse(decodeURI(getUrlParam("Para")));
+  console.log(paradata);
 
       $.ajax({
-         url:url,
+         url:"json/newdata.json",
          dataType:"text",
+         type:"GET",
+         data:paradata,
          success: function(data){
 
               var json = $.parseJSON(data);
 
-              for (; i < json.data.length;++i){
-                pt = new BMap.Point(parseFloat(json.data[i].lng), parseFloat(json.data[i].lat));
+              for (var i=0; i < json.district.length;++i){
+                pt = new BMap.Point(parseFloat(json.district[i].lng), parseFloat(json.district[i].lat));
 
-                var myOverlay = new RectangularOverlay(pt,json.data[i].id,json.data[i].name+" "+json.data[i].price +unit,type);
+                var myOverlay = new RectangularOverlay(pt,json.district[i].name,json.district[i].name+" "+json.district[i].xq_count +"个小区","Cir",json.district[i].communities);
                 map.addOverlay(myOverlay);
-
            }
+
+              map.addEventListener("zoomend", function() {
+                 this.clearOverlays();
+
+
+               if (this.getZoom() <15){
+
+              for (var i=0; i < json.district.length;++i){
+                pt = new BMap.Point(parseFloat(json.district[i].lng), parseFloat(json.district[i].lat));
+
+                var myOverlay = new RectangularOverlay(pt,json.district[i].name,json.district[i].name+" "+json.district[i].xq_count +"个小区","Cir",json.district[i].communities);
+
+                map.addOverlay(myOverlay);
+           }
+
+         } else{
+           for (var i=0; i < json.district.length;++i){
+             for(var j=0;j<json.district[i].communities.length;++j){
+
+             pt = new BMap.Point(parseFloat(json.district[i].communities[j].lng), parseFloat(json.district[i].communities[j].lat));
+             var myOverlay = new RectangularOverlay(pt,json.district[i].communities[j].id,json.district[i].communities[j].name+" "+json.district[i].communities[j].price +"万","Rec",json.district[i].communities[j].match);
+             map.addOverlay(myOverlay);
+                }
+             }
+           }
+         });
          },
          error:function(data){
             alert('Error loading data');
@@ -64,13 +66,14 @@ map.enableScrollWheelZoom(true);
 
       });
 
-}
+// }
 
-function RectangularOverlay(point,id,text,type){
+function RectangularOverlay(point,id,text,type,dataset){
       this._point = point;
       this._text = text;
       this._id=id;
       this._type = type;
+      this._dataset = dataset;
 
     }
 
@@ -121,7 +124,7 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       div.style.width = "100px";
       div.style.borderRadius = "50%";
 
-      hyperlink = "pqestate.html?id=" + this._id;
+      hyperlink = "pqestate.html?id=" + encodeURI(encodeURI(JSON.stringify(this._dataset)))+"&pq="+encodeURI(encodeURI(JSON.stringify(this._id)));
 
       div.addEventListener('touchstart',handleDivEvent(hyperlink));
       div.addEventListener('touchmove',handleDivEvent(hyperlink));
@@ -132,6 +135,16 @@ RectangularOverlay.prototype.initialize = function(targetmap){
         }
 
     } else{
+
+      if(this._dataset<8){
+        div.style.backgroundColor = "#149A22";
+        div.style.border="none";
+      } else if (this._dataset>8&&this._dataset<9){
+          div.style.backgroundColor = "#9D8410";
+          div.style.border="none";
+      }else{
+
+      }
       div.style.height = "25px";
       hyperlink = "estate.html?id=" + this._id;
 

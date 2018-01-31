@@ -11,10 +11,12 @@ var dic = {
   "landscape":"景观环境",
   "medical":"医疗配套"
 };
-// 利用html5 <template> view/xqinfo.html模版显示小区基本信息
- // var link = document.querySelector('link[rel="import"]');
- // var template = link.import.querySelector("template");
- //  $("#info").append(document.importNode(template.content,true));
+
+
+$(document).bind("sayhello",function(evt){
+  console.log(evt);
+});
+
 // 解读传入参数（小区id）
 var id = getUrlParam("id");
 var points=[];
@@ -138,7 +140,7 @@ var points=[];
  }
 
  function Mapinit(points){
-   var map = new BMap.Map("xqmap");
+  var map = new BMap.Map("xqmap");
    map.centerAndZoom(points[0], 15);
 
    map.addControl(new BMap.MapTypeControl({

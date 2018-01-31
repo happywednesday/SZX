@@ -4,7 +4,7 @@
   <head>
     <title>智慧房图</title>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible cache-control" content="IE=edge no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="description" content="">
 <!-- css -->
@@ -19,6 +19,7 @@
 <script type="text/javascript" src="http://api.map.baidu.com/library/Heatmap/2.0/src/Heatmap_min.js"></script>
 
 <script type="text/javascript" src="js\heatmap.js"></script>
+<script type="text/javascript" src="js\service.js"></script>
 
 </head>
   <body ontouchstart>
@@ -51,5 +52,8 @@
   <div id="heatmap"></div>
 
   </body>
-
+  <script>
+  // 检查浏览器类型，如果非微信浏览器，跳转到空白页面
+  checkAgent();
+  </script>
 </html>

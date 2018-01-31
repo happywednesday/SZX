@@ -80,11 +80,11 @@ font-family:Microsoft Yahei;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
-  -webkit-transition: background-color .55s ease;
+  /* -webkit-transition: -webkit-transform background-color .55s ease;
   -moz-transition: background-color .55s ease;
   -ms-transition: background-color .55s ease;
   -o-transition: background-color .55s ease;
-  transition: background-color .55s ease;
+  transition: background-color .55s ease; */
 }
 
 

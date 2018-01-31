@@ -15,6 +15,15 @@ var id = getUrlParam("user");
             var html = estatetplt.render(json);
             $("#estatelist").html(html);
 
+
+            for (var i= 0 ;i<json.length;i++){
+                for(var j=0; j<json[i].grade;j++){
+                
+              var star = $('<span>').addClass("fa fa-star");
+              $("#"+json[i].id).append(star);
+              }
+            }
+
       },
       error: function(err) {
       $.toptip("操作失败",'error');

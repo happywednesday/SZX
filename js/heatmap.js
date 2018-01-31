@@ -38,12 +38,12 @@ $.ajax({
 // 监听地图移动事件
 map.addEventListener("moveend",function(){
 
-  alert(map.getBounds().Fe+";"+map.getBounds().Ge);
+  // alert(map.getBounds().Fe+";"+map.getBounds().Ge);
  // mapExtentchange();
 });
 // 监听地图放大缩小事件
 map.addEventListener("zoomend",function(){
-    alert(map.getBounds().Fe+";"+map.getBounds().Ge);
+    // alert(map.getBounds().Fe+";"+map.getBounds().Ge);
 // mapExtentchange();
 });
 // 根据地图显示范围再次向服务器请求统计数据数据

@@ -2,6 +2,10 @@ $(document).ready(function(){
 
 $("#searchbtn").on('click',function(e){
 
+  var template = $("#listing");
+  $("#result").html(template.html());
+
+
   // 根据名称 利用GET向服务器请求小区列表
    $.ajax({
       url:requestData("xq",$("#search").val()),

@@ -4,7 +4,7 @@
   <head>
     <title>问卷调查</title>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible cache-control" content="IE=edge no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="description" content="">
 <!-- css -->
@@ -17,6 +17,7 @@
 <script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="js\form.js"></script>
+<script src="js\service.js"></script>
 
 </head>
   <body ontouchstart>
@@ -34,6 +35,7 @@
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-jpy" aria-hidden="true"></i>  您的预算？</label></h4>
                    <div id="budget"></div>
+
                  </div>
                </div>
 
@@ -76,12 +78,16 @@
 
 
            <div class="page__ft">
-<a href="map.html" class="weui-btn weui-btn_warn">好了，提交查询</a>
+              <a id="submit" class="weui-btn weui-btn_warn">好了，提交查询</a>
            </div>
       </div>
    </div>
 
 
   </body>
+  <script>
+  // 检查浏览器类型，如果非微信浏览器，跳转到空白页面
+  checkAgent();
+  </script>
 
 </html>

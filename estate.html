@@ -4,7 +4,7 @@
   <head>
     <title>小区查询</title>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="X-UA-Compatible cache-control" content="IE=edge no-cache">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="description" content="">
 <!-- css -->
@@ -12,8 +12,6 @@
 <link rel="stylesheet" href="node_modules\jquery-weui\dist\css\jquery-weui.min.css">
 <link rel="stylesheet" href="node_modules\font-awesome\css\font-awesome.min.css">
 <link rel="stylesheet" href="css\main.css">
-<!-- view -->
-<link rel="import" href="view\xqinfo.html">
 <!-- script -->
 <script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
@@ -100,7 +98,7 @@
              <div id="barlist"></div>
              <!-- bubblechart显示区域 -->
              <div >
-             <iframe id="childFrame" height="400px" scrolling = "no" sandbox="allow-popups allow-scripts allow-forms allow-same-origin" marginwidth="0" marginheight="0" style ="border:1px;width:100%" ></iframe>
+             <iframe id="childFrame" height="400px" scrolling = "no" sandbox="allow-popups allow-scripts allow-forms allow-same-origin allow-modals" marginwidth="0" marginheight="0" style ="border:1px;width:100%" ></iframe>
            </div>
 
              <div class="weui-panel__ft"></div>
@@ -150,8 +148,8 @@
          </a>
          <div class="collapse" id={{:fybh}} >
 
-         {{for listing}}
 
+         {{for listing}}
          <a href={^{:url}} class="weui-media-box weui-media-box_appmsg">
            <div class="weui-media-box__hd">
              <img class="weui-media-box__thumb" src="image/{{:agent}}.jpg">
@@ -162,7 +160,9 @@
           </div>
          </a>
 
+
          {{/for}}
+
 
           </div>
            </script>
@@ -184,10 +184,14 @@
 
      <div class="weui-cell__hd">历史成交价</div>
      <div class="weui-cell__bd">
- <iframe scrolling = "no" sandbox="allow-popups allow-scripts allow-forms allow-same-origin" marginwidth="20px" marginheight="0" style ="border:1px;width:100%" src="view/linechart.html"></iframe>
+ <iframe scrolling = "no" sandbox="allow-popups allow-scripts allow-forms allow-same-origin allow-modals" marginwidth="20px" marginheight="0" style ="border:1px;width:100%" src="view/linechart.html"></iframe>
  </div>
 
  </div>
   </body>
+  <script>
+  // 检查浏览器类型，如果非微信浏览器，跳转到空白页面
+  checkAgent();
+  </script>
 
 </html>

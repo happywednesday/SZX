@@ -1,0 +1,204 @@
+ { "status":"",
+     "msg":"",
+     "district":[
+       {
+        "id": "101",
+        "name": "景田",
+        "lat": 22.552337,
+        "lng": 114.051074,
+      "xq_count":7,
+      "price":"10万/平米",
+      "communities":[
+       	{
+       		"id": "5a96cc5969c2309d0f458fc1bd24c1de",
+           "name": "景田燃气综合楼",
+       		"price": 5.7,
+       		"lat": 22.5601387258,
+       		"lng": 114.047976463,
+          "fy_count":10,
+          "match":"9.2",
+          "img":"image/rate1.jpg"
+       	},
+         {
+     		"id": "9aef3bc173db0130d499f4f50eeda8f5",
+         "name": "景田西",
+     		"price": 6.1,
+     		"lat": 22.5626917813,
+     		"lng": 114.047724664,
+        "fy_count":8,
+        "match":"8.8",
+        "img":"image/rate2.jpg"
+     	},
+       {
+     		"id": "e1714bf0c529124d32f6c0926886a20b",
+         "name": "景田翠景园",
+     		"price": 6.2,
+     		"lat": 22.5566766356,
+     		"lng": 114.050367371,
+        "fy_count":14,
+        "match":"7.8",
+        "img":"image/rate3.jpg"
+     	},
+       {
+     		"id": "c6b92243ae6866d73d294c1d42c38ac9",
+         "name": "景田合正名园二期",
+     		"price": 7.1,
+     		"lat": 22.5487607441,
+     		"lng": 114.051142463,
+        "fy_count":22,
+        "match":"9.6",
+        "img":"image/rate1.jpg"
+     	},
+       {
+     		"id": "64be58e9062e1f0d1018fd40c648bb57",
+         "name": "景田天健花园",
+     		"price": 8.2,
+     		"lat": 22.5631077007,
+     		"lng": 114.040321967,
+        "fy_count":19,
+        "match":"9.3",
+        "img":"image/rate2.jpg"
+     	},
+       {
+     		"id": "01f38ab14422f3c740a48b65252763ed",
+         "name": "景田北",
+     		"price": 6.7,
+     		"lat": 22.5633481882,
+     		"lng": 114.050889932,
+        "fy_count":26,
+        "match":"8.9",
+        "img":"image/rate3.jpg"
+     	},
+       {
+     		"id": "a74d4868b7ef0d137cca6daa9c144f3e",
+         "name": "景田合正名园一期",
+     		"price": 6.5,
+     		"lat": 22.5478772078,
+     		"lng": 114.050751143,
+        "fy_count":34,
+        "match":"8.7",
+        "img":"image/rate1.jpg"
+     	}]
+ },
+   {
+        "id": "102",
+        "name": "新洲",
+        "lat": 22.530005,
+        "lng": 114.051182,
+        "xq_count":5,
+        "price":"8万/平米",
+        "communities":[
+          {
+        		"id": "ea4e7f89e4d17f206d32e22363677916",
+            "name": "新洲花园综合楼",
+        		"price": 4.5,
+        		"lat": 22.5311070409,
+        		"lng": 114.054746478,
+            "fy_count":34,
+            "match":"9.5",
+            "img":"image/rate2.jpg"
+        	},
+          {
+        		"id": "2f4918fcbd8ec2dc705806a2858f7a4e",
+            "name": "新洲骏皇嘉园",
+        		"price": 6.2,
+        		"lat": 22.5298174564,
+        		"lng": 114.051880674,
+            "fy_count":34,
+            "match":"9.4",
+            "img":"image/rate2.jpg"
+        	},
+          {
+        		"id": "0747736b2cb0f7544ee626f0910d3db2",
+            "name": "新洲花园",
+        		"price": 5.4,
+        		"lat": 22.5323226396,
+        		"lng": 114.055042631,
+            "fy_count":34,
+            "match":"6.5",
+            "img":"image/rate3.jpg"
+        	},
+          {
+        		"id": "2903afef9f9724ddfc191d04dca456e0",
+            "name": "罗湖区工商综合楼新洲住宅楼",
+        		"price": 7.2,
+        		"lat": 22.5310371479,
+        		"lng": 114.052022233,
+            "fy_count":34,
+            "match":"7.8",
+            "img":"image/rate1.jpg"
+        	},
+          {
+        		"id": "67b362852f85bace5d6987635d965f27",
+            "name": "新洲苑",
+        		"price": 6.0,
+        		"lat": 22.5305634227,
+        		"lng": 114.052080799,
+            "fy_count":34,
+            "match":"8.7",
+            "img":"image/rate2.jpg"
+        	}
+        ]
+     },
+     {
+         "id": "103",
+         "name": "莲花",
+         "lat": 22.550301,
+         "lng": 114.061531,
+         "xq_count":5,
+         "price":"8万/平米",
+         "communities":[
+           {
+         		"id": "c99730a2e1b7ad2bfd9d430f27d32dd5",
+             "name": "莲花一村",
+         		"price": 5.8,
+         		"lat": 22.5593984826,
+         		"lng": 114.076708741,
+            "fy_count":34,
+            "match":"8",
+            "img":"image/rate3.jpg"
+         	},
+           {
+         		"id": "915222808fba579ae94007efb08124db",
+             "name": "莲花天心楼",
+         		"price": 6.5,
+         		"lat": 22.565861384,
+         		"lng": 114.065565345,
+            "fy_count":34,
+            "match":"9.1",
+            "img":"image/rate1.jpg"
+         	},
+           {
+         		"id": "5e3a61388e2ecbb0f0d386a32204dcf8",
+             	"name": "莲花二村",
+         		"price": 7.4,
+         		"lat": 22.5559218417,
+         		"lng": 114.077244192,
+            "fy_count":34,
+            "match":"7.7",
+            "img":"image/rate2.jpg"
+         	},
+           {
+         		"id": "8dc96b626e92e9f36ae1f75d76117a68",
+             "name": "莲花北",
+         		"price": 6.2,
+         		"lat": 22.5649654251,
+         		"lng": 114.057286645,
+            "fy_count":34,
+            "match":"8.8",
+            "img":"image/rate3.jpg"
+         	},
+           {
+         		"id": "42cdae4006619fb065f7a3aff04fe19f",
+              "name": "福莲花园",
+         		"price": 8.0,
+         		"lat": 22.5523220416,
+         		"lng": 114.075695113,
+            "fy_count":34,
+            "match":"8.9",
+            "img":"image/rate1.jpg"
+         		}
+         ]
+    }
+  ]
+}
