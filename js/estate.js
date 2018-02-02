@@ -13,10 +13,6 @@ var dic = {
 };
 
 
-$(document).bind("sayhello",function(evt){
-  console.log(evt);
-});
-
 // 解读传入参数（小区id）
 var id = getUrlParam("id");
 var points=[];
@@ -42,10 +38,13 @@ var points=[];
          // 将服务器回传数据变换到bubblechart所需的格式
          var data=[];
          for(var key in json.evaluation_info) {
-         data.push({text:dic[key],count:json.evaluation_info[key]});
-       }
-          // 将评价指标数据传给子窗口
-          $('#childFrame').attr('src','view/bubblechart.html?idx='+encodeURI(encodeURI(JSON.stringify(data))));
+            data.push({name:dic[key],value:json.evaluation_info[key]});
+         }
+          // 初始化bubble chart
+        //  bubbleChartInit(data);
+
+        //  加载echart
+         piechart(data);
 
           },
     error: function(err) {
@@ -157,8 +156,6 @@ var points=[];
          }
   var pointCollection = new BMap.PointCollection(points, options);
 
-  //  var marker = new BMap.Marker(new BMap.Point(lng,lat));
-
    map.addOverlay(pointCollection);
  }
 // 判断小区是否被关注
@@ -184,11 +181,10 @@ function tagged(){
              time:2000
            });
            $("#addtolist").html("已关注").attr("class","weui-btn weui-btn_mini weui-btn_primary").attr("value","2");
-
-       },
+     },
      error: function(status,msg) {
           $.toptip("未找到所需信息",'error');
-      }
+     }
    });
 }
 // 取消关注
@@ -199,10 +195,6 @@ function untagged(){
   });
   $("#addtolist").html("+关注").attr("class","weui-btn weui-btn_mini weui-btn_warn").attr("value","1");
 }
-
-
-
-
 
 
 });

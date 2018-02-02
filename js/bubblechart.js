@@ -1,5 +1,4 @@
-$(document).ready(function () {
-  var idx = JSON.parse(decodeURI(getUrlParam("idx")));
+function bubbleChartInit(idx) {
 
   var bubbleChart = new d3.svg.BubbleChart({
     supportResponsive: true,
@@ -33,7 +32,7 @@ $(document).ready(function () {
           },
           attr: {dy: "65px"},
           centralClick: function(e) {
-        
+
 
           }
         }
@@ -86,4 +85,4 @@ $(document).ready(function () {
         }
       }]
   });
-});
+}

@@ -4,9 +4,14 @@
   <head>
     <title>问卷调查</title>
     <meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible cache-control" content="IE=edge no-cache">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="description" content="">
+
+<script>
+// 检查浏览器类型，如果非微信浏览器，跳转到空白页面
+// checkAgent();
+</script>
 <!-- css -->
 <link rel="stylesheet" href="node_modules\jquery-weui\dist\lib\weui.min.css">
 <link rel="stylesheet" href="node_modules\jquery-weui\dist\css\jquery-weui.min.css">
@@ -18,6 +23,7 @@
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
 <script src="js\form.js"></script>
 <script src="js\service.js"></script>
+
 
 </head>
   <body ontouchstart>
@@ -35,47 +41,31 @@
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-jpy" aria-hidden="true"></i>  您的预算？</label></h4>
                    <div id="budget"></div>
-
                  </div>
-               </div>
 
-
-               <div class="weui-panel_bd">
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-th" aria-hidden="true"></i>  您想找多大面积的房子？</label></h4>
                    <div id="size"></div>
                  </div>
-               </div>
 
-               <div class="weui-panel_bd">
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-map" aria-hidden="true"></i>  有意向的区域么？</label></h4>
                    <div id="region"></div>
                  </div>
-               </div>
 
-               <div class="weui-panel_bd">
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-subway" aria-hidden="true"></i>  周边配套有什么要求？</label></h4>
                    <div id="facility"></div>
                  </div>
-               </div>
 
-               <div class="weui-panel_bd">
                  <div class="weui-media-box weui-media-box_text">
                    <h4 class="weui-media-box__title"><label for="name" class="weui-label"><i class="fa fa-university" aria-hidden="true"></i>  想找什么样的房子？</label></h4>
                    <div id="feature"></div>
                  </div>
                </div>
-
-   </div>
-
+             </div>
+             
            </div>
-           <div>
-
-           </div>
-
-
 
            <div class="page__ft">
               <a id="submit" class="weui-btn weui-btn_warn">好了，提交查询</a>
@@ -85,9 +75,6 @@
 
 
   </body>
-  <script>
-  // 检查浏览器类型，如果非微信浏览器，跳转到空白页面
-  checkAgent();
-  </script>
+
 
 </html>
