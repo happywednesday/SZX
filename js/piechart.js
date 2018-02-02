@@ -7,7 +7,14 @@ function piechart(displaydata){
 	    title : {
 	        text: '总体评价',
 	        subtext: '8.6',
-	        x:'center'
+	        x:'center',
+					subtextStyle:{
+						fontSize:24,
+						color:'#FA5858',
+						textShadowColor:'#585858',
+						textShadowBlur:3,
+						textShadowOffsetX:2
+					}
 	    },
 	    tooltip : {
 	        trigger: 'item',

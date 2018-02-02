@@ -36,12 +36,13 @@ var points=[];
           points.push(new BMap.Point(json.basic_info.lng,json.basic_info.lat));
 
          // 将服务器回传数据变换到bubblechart所需的格式
-         var data=[];
+         var data=[], data1=[];
          for(var key in json.evaluation_info) {
             data.push({name:dic[key],value:json.evaluation_info[key]});
+            data1.push({text:dic[key],count:json.evaluation_info[key]});
          }
           // 初始化bubble chart
-        //  bubbleChartInit(data);
+         bubbleChartInit(data1);
 
         //  加载echart
          piechart(data);
