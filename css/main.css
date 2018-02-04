@@ -12,11 +12,12 @@
 
 /* 除weui框架css和自定义css外，这里还引入bootstrap css */
 .page__hd{
-  background-color: #910029;
+  background-color: #e64340;
   font-family: Microsoft Yahei;
   color: #FFFFFF;
   text-align: center;
-  opacity: 0.8;
+  height:50px;
+  line-height: 50px;
 
 }
 .page__bd{
@@ -111,7 +112,6 @@ font-family:Microsoft Yahei;
   font-size: 13px;
   z-index: 1;
   color: #ffffff;
-  background-color: #910029;
 
 }
 

@@ -10,6 +10,7 @@ const dataset = [
 
 const facArray=["subw","supm","shpm","deps","park","prims","junhs","view"];
 const feaArray=["garden","elev","floor","floor","floor","orien"];
+localStorage.user="60001";
 
 $(dataset).each(function(data){
 
@@ -123,15 +124,10 @@ $("#submit").click(function(){
 
    });
 
-   // $.get("map.html", {Para:JSON.stringify(subdata)}, function(){
-   // } );
+  localStorage.formdata=JSON.stringify(subdata);
 
-      // var data = JSON.parse(response);
+  window.location.href="map.html";
 
-       window.location.href="map.html?Para="+encodeURI(encodeURI(JSON.stringify(subdata)));
-
-
-  console.log(subdata);
 
 });
 

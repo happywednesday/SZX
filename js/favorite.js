@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
-var id = getUrlParam("user");
+// var id = getUrlParam("user");
+var id=localStorage.user;
 
  // GET向服务器请求用户关注小区信息
     $.ajax({
@@ -18,7 +19,7 @@ var id = getUrlParam("user");
 
             for (var i= 0 ;i<json.length;i++){
                 for(var j=0; j<json[i].grade;j++){
-                
+
               var star = $('<span>').addClass("fa fa-star");
               $("#"+json[i].id).append(star);
               }

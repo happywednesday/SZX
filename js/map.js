@@ -2,7 +2,6 @@
 $(document).ready(function(){
 
 var map = new BMap.Map("resultmap");
-map.centerAndZoom(new BMap.Point(114.0427, 22.552701), 15);
 
 map.addControl(new BMap.MapTypeControl({
 mapTypes:[
@@ -12,39 +11,33 @@ mapTypes:[
 map.setCurrentCity("深圳");
 map.enableScrollWheelZoom(true);
 
- 	 var pt = null;
- 	 var i = 0;
-  //  解析问卷穿来的参数
-   var paradata = JSON.parse(decodeURI(getUrlParam("Para")));
-  console.log(paradata);
-
       $.ajax({
          url:"json/newdata.json",
          dataType:"text",
          type:"GET",
-         data:paradata,
+         data:JSON.parse(localStorage.formdata),
          success: function(data){
-
               var json = $.parseJSON(data);
-
+              var centerpt = new BMap.Point(0,0);
               for (var i=0; i < json.district.length;++i){
-                pt = new BMap.Point(parseFloat(json.district[i].lng), parseFloat(json.district[i].lat));
-
+                var pt = new BMap.Point(parseFloat(json.district[i].lng), parseFloat(json.district[i].lat));
+                centerpt.lng+=pt.lng;
+                centerpt.lat+=pt.lat;
                 var myOverlay = new RectangularOverlay(pt,json.district[i].name,json.district[i].name+" "+json.district[i].xq_count +"个小区","Cir",json.district[i].communities);
                 map.addOverlay(myOverlay);
-           }
+               }
+               centerpt.lng/=json.district.length;
+               centerpt.lat/=json.district.length;
+               map.centerAndZoom(centerpt, 15);
 
               map.addEventListener("zoomend", function() {
                  this.clearOverlays();
-
 
                if (this.getZoom() <15){
 
               for (var i=0; i < json.district.length;++i){
                 pt = new BMap.Point(parseFloat(json.district[i].lng), parseFloat(json.district[i].lat));
-
                 var myOverlay = new RectangularOverlay(pt,json.district[i].name,json.district[i].name+" "+json.district[i].xq_count +"个小区","Cir",json.district[i].communities);
-
                 map.addOverlay(myOverlay);
            }
 
@@ -66,16 +59,13 @@ map.enableScrollWheelZoom(true);
 
       });
 
-// }
-
 function RectangularOverlay(point,id,text,type,dataset){
       this._point = point;
       this._text = text;
       this._id=id;
       this._type = type;
       this._dataset = dataset;
-
-    }
+      }
 
 var startPos, endPos;
 
@@ -124,27 +114,28 @@ RectangularOverlay.prototype.initialize = function(targetmap){
       div.style.width = "100px";
       div.style.borderRadius = "50%";
 
-      hyperlink = "pqestate.html?id=" + encodeURI(encodeURI(JSON.stringify(this._dataset)))+"&pq="+encodeURI(encodeURI(JSON.stringify(this._id)));
+      var pq=this._id;
+      var xqlist=JSON.stringify(this._dataset);
 
       div.addEventListener('touchstart',handleDivEvent(hyperlink));
       div.addEventListener('touchmove',handleDivEvent(hyperlink));
       div.addEventListener('touchend',handleDivEvent(hyperlink));
 
       div.onclick = function(e){
-          window.location.href = hyperlink;
+          localStorage.pq=pq;
+          localStorage.xqlist=xqlist;
+          window.location.href = "pqestate.html";
+          localStorage.previousCenter = map.getCenter();
         }
 
     } else{
-
       if(this._dataset<8){
         div.style.backgroundColor = "#149A22";
         div.style.border="none";
       } else if (this._dataset>8&&this._dataset<9){
           div.style.backgroundColor = "#9D8410";
           div.style.border="none";
-      }else{
-
-      }
+      }else{}
       div.style.height = "25px";
       hyperlink = "estate.html?id=" + this._id;
 
@@ -170,14 +161,14 @@ RectangularOverlay.prototype.draw = function(){
   var map = this._map;
   var pixel = map.pointToOverlayPixel(this._point);
   if (this._type = "Rec"){
-  this._div.style.left = pixel.x + "px";
-  this._div.style.top = pixel.y -30 + "px";
-} else {
-  var style = window.getComputedStyle(this._div);
-  var radius = parseInt(style.height, 10) / 2;
-  this._div.style.left = (pixel.x - radius) + 'px';
-  this._div.style.top = (pixel.y - radius) + 'px';
-}
+      this._div.style.left = pixel.x + "px";
+      this._div.style.top = pixel.y -30 + "px";
+  } else {
+    var style = window.getComputedStyle(this._div);
+    var radius = parseInt(style.height, 10) / 2;
+    this._div.style.left = (pixel.x - radius) + 'px';
+    this._div.style.top = (pixel.y - radius) + 'px';
+  }
 }
 
 

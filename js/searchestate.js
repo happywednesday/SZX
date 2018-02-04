@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+localStorage.user="60001";
 $("#searchbtn").on('click',function(e){
 
   var template = $("#listing");
