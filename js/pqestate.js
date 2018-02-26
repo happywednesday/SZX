@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    var idx = JSON.parse(localStorage.xqlist);
-    var pqname=localStorage.pq;
+    var idx = JSON.parse(sessionStorage.xqlist);
+    var pqname=sessionStorage.pq;
 
     $("#pqname").html(pqname+"片区");
 

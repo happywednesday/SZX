@@ -124,7 +124,7 @@ $("#submit").click(function(){
 
    });
 
-  localStorage.formdata=JSON.stringify(subdata);
+  sessionStorage.formdata=JSON.stringify(subdata);
 
   window.location.href="map.html";
 
