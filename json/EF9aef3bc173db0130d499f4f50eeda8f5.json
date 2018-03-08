@@ -6,37 +6,40 @@
   {
     "id":"120011",
     "name":"景田地铁站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"交通配套",
+    "idx2":"metro",
+    "idx2_grade":8.7,
     "lng":114.043593,
     "lat":22.553381,
     "distance":"500米",
     "time_walk":"10",
-    "time_ride":"5"
+    "time_ride":"5",
+    "remark":""
   },
   {
     "id":"120012",
     "name":"梅景地铁站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"交通配套",
+    "idx2":"metro",
+    "idx2_grade":8.8,
     "lng":114.03880,
     "lat":22.560278,
     "distance":"200米",
     "time_walk":"8",
-    "time_ride":"3"
+    "time_ride":"3",
+    "remark":""
   },
   {
     "id":"120013",
     "name":"某某学校",
-    "index1":"",
-    "index2":"",
-    "type":"primary",
+    "idx1":"交通配套",
+    "idx2":"primary",
+    "idx2_grade":8.8,
     "lng":114.041175,
     "lat":22.562024,
     "distance":"50米",
     "time_walk":"5",
-    "time_ride":"1"
+    "time_ride":"1",
+    "remark":""
   }]
 }

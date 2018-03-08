@@ -11,7 +11,6 @@
 <!--检查浏览器类型，如果非微信浏览器，跳转到空白页面 -->
 <!-- <script>checkAgent();</script> -->
 <!-- script -->
-<script src="node_modules\d3\build\d3.min.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\jquery-2.1.4.js"></script>
 <script src="node_modules\jquery-weui\dist\lib\fastclick.js"></script>
 <script src="node_modules\jquery-weui\dist\js\jquery-weui.min.js"></script>
@@ -32,9 +31,9 @@
 
              <div class = "weui-cell">
                <div class="weui-cell__bd">
-                 <label class ="weui-label" id="pqname"></label>
+                 <label class ="weui-label" style = "color:red;font-size:14px;" id="xqcount"></label>
                </div>
-               <div class = "weui-cell__ft" style = "color:red;font-size:12px;" id="xqcount"></div>
+               <div class = "weui-cell__ft"><div class="navtext">地图模式</div></div>
              </div>
 
             <div class="weui-panel weui-panel_access" >
@@ -49,11 +48,11 @@
                 <table style="width:100%">
                  <tr>
                   <td style ="font-size:14px;width：70%">{{:name}}</td>
-                  <td style ="color:red;font-size:16px;text-align:left">匹配度: <label>{{:match}}</label></td>
+                  <td style ="color:red;font-size:14px;text-align:left">匹配度: <label>{{:match}}</label></td>
                  </tr>
                  <tr>
-                  <td style ="font-size:10px;width:70%">挂牌均价 <label style ="color:red;">{{:price}}</label></td>
-                  <td style ="font-size:10px;text-align:left"></td>
+                  <td style ="width:70%"><label class="hightlighttag">挂牌均价 {{:price}}万</label></td>
+                  <td style ="text-align:left"></td>
                 </tr>
                </table>
                 </div>

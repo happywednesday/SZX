@@ -44,7 +44,6 @@
               <a href="estate.html?id={^{:id}}" class="weui-media-box weui-media-box_appmsg">
                 <div class="weui-media-box__hd">
                  <img class="weui-media-box__thumb" src={{:img}}>
-
                 </div>
                 <div class="weui-media-box__bd">
                 <table style="width:100%">
@@ -54,9 +53,9 @@
                   <td id={{:id}} style ="color:#ffbf00;text-align:left"></label></td>
                  </tr>
                  <tr>
-                  <td style ="font-size:10px;width:40%">均价: <label style ="color:red;">{{:price}}</label></td>
-                  <td style ="font-size:10px;width:40%">在售: <label style ="color:red;">{{:sale_num}}</label></td>
-                  <td style ="font-size:10px;width:40%">在租: <label style ="color:red;">{{:rent_num}}</label></td>
+                  <td style ="font-size:10px;width:40%"><label class="hightlighttag">均价: {{:price}} 万/m<sup>2</sup></label></td>
+                  <td style ="font-size:10px;width:40%"><label class="hightlighttag">在售: {{:sale_num}}</label></td>
+                  <td style ="font-size:10px;width:40%"><label class="hightlighttag">在租: {{:rent_num}}</label></td>
                   <td style ="font-size:10px;text-align:left"></td>
                 </tr>
                </table>

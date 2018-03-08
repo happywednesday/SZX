@@ -6,37 +6,53 @@
   {
     "id":"110011",
     "name":"景田地铁站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"transport",
+    "idx2":"metro",
+    "idx2_grade":8.7,
     "lng":114.043593,
     "lat":22.553381,
     "distance":"500米",
     "time_walk":"10",
-    "time_ride":"5"
+    "time_ride":"5",
+    "remark":""
+  },
+  {
+    "id":"120012",
+    "name":"梅景地铁站",
+    "idx1":"transport",
+    "idx2":"metro",
+    "idx2_grade":8.7,
+    "lng":114.03880,
+    "lat":22.560278,
+    "distance":"200米",
+    "time_walk":"8",
+    "time_ride":"3",
+    "remark":""
   },
   {
     "id":"110012",
     "name":"监控中心公交站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"transport",
+    "idx2":"bus",
+    "idx2_grade":9.1,
     "lng":114.041674,
     "lat":22.555439,
     "distance":"200米",
     "time_walk":"8",
-    "time_ride":"3"
+    "time_ride":"3",
+    "remark":""
   },
   {
     "id":"110013",
     "name":"某某医院",
-    "index1":"",
-    "index2":"",
-    "type":"medical",
+    "idx1":"medical",
+    "idx2":"hospital",
+    "idx2_grade":9.1,
     "lng":114.049285,
     "lat":22.555728,
     "distance":"100米",
     "time_walk":"5",
-    "time_ride":"1"
+    "time_ride":"1",
+    "remark":""
   }]
 }

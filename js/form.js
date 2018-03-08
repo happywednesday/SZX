@@ -24,10 +24,11 @@ $(dataset).each(function(data){
                      .attr({
                        "value":0,
                        "id":i
-                      })
+                          })
                      .html(item[i])
-                     .css("margin","5px 0px 0px 5px")
-                     .css("font-size",12);
+                     .css({"margin":"5px 0px 0px 5px",
+                           "font-size":12
+                         });
      targetNode.append(a);
    }
  }else if(Object.keys(dataset[data])[0]=="facility"){
@@ -124,9 +125,25 @@ $("#submit").click(function(){
 
    });
 
-  sessionStorage.formdata=JSON.stringify(subdata);
 
-  window.location.href="map.html";
+  if(subdata.budget&&subdata.size){
+    $('#sizespan').css("display","none");
+    $('#budgetspan').css("display","none");
+    sessionStorage.formdata=JSON.stringify(subdata);
+    window.location.href="map.html";
+  }else {
+    if(subdata.budget){
+     $('#sizespan').css("display","inline");
+     $('#budgetspan').css("display","none");
+    }else if(subdata.size){
+       $('#budgetspan').css("display","inline");
+       $('#sizespan').css("display","none");
+    }else{
+       $('#sizespan').css("display","none");
+       $('#budgetspan').css("display","none");
+    }
+  };
+
 
 
 });

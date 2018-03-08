@@ -34,7 +34,7 @@ function returnicon(type){
     case "metro":
       return "fa fa-subway";
 
-    case "medical":
+    case "hospital":
      return "fa fa-h-square";
 
     case "primary":
@@ -42,6 +42,12 @@ function returnicon(type){
 
      case "commercial":
       return "fa fa-shopping-cart";
+
+     case "bus":
+      return "fa fa-bus";
+
+     case "home":
+       return "fa fa-home";
 
     default:
 

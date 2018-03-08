@@ -6,49 +6,53 @@
   {
     "id":"140011",
     "name":"石厦地铁站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"交通配套",
+    "idx2":"metro",
+    "idx2_grade":8.8,
     "lng":114.043593,
     "lat":22.553381,
     "distance":"320米",
     "time_walk":"11",
-    "time_ride":"4"
+    "time_ride":"4",
+    "remark":""
   },
   {
     "id":"140012",
     "name":"新洲公交站",
-    "index1":"",
-    "index2":"",
-    "type":"metro",
+    "idx1":"交通配套",
+    "idx2":"metro",
+    "idx2_grade":8.8,
     "lng":114.03880,
     "lat":22.560278,
     "distance":"140米",
     "time_walk":"6",
-    "time_ride":"5"
+    "time_ride":"5",
+    "remark":""
   },
   {
     "id":"140013",
     "name":"新洲小学",
-    "index1":"",
-    "index2":"",
-    "type":"primary",
+    "idx1":"education",
+    "idx2":"primary",
+    "idx2_grade":8.8,
     "lng":114.041175,
     "lat":22.562024,
     "distance":"10米",
     "time_walk":"2",
-    "time_ride":"1"
+    "time_ride":"1",
+    "remark":""
   },
   {
     "id":"140014",
     "name":"石厦中学",
-    "index1":"",
-    "index2":"",
-    "type":"primary",
+    "idx1":"education",
+    "idx2":"secondary",
+    "idx2_grade":8.8,
     "lng":114.041175,
     "lat":22.562024,
     "distance":"25米",
     "time_walk":"5",
-    "time_ride":"2"
+    "time_ride":"2",
+    "remark":""
   }]
 }
